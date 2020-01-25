@@ -1,17 +1,34 @@
 <br />
 <div class="container">
   <div class="row text-center">
-    <% @lyrics.each do |video| %>
       <div class="col-sm">
         <iframe
           width="340"
           height="180"
-          src="<%= video %>"
+          src="<%= @lyric.video_url %>"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
         </iframe>
-      </div>  
+      </div> 
+  </div>
+
+
+  <h3>other videos by <%= @lyric.artist%></h3>
+  <div class="row text-center">
+    <% if @lyrics_from_same_artist != nil %>
+      <% @lyrics_from_same_artist.each do |lyric|%>
+        <div class="col-sm">
+          <iframe
+            width="340"
+            height="180"
+            src="<%= lyric.video_url %>"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div> 
+      <% end %>
     <% end %>
   </div>
- </div> 
+</div> 

@@ -14,6 +14,7 @@ class Owner::LyricsController < ApplicationController
 
   def show
     @lyric = Lyric.find(params[:id])
+    @lyrics_from_same_artist = Lyric.where("id != ? AND artist =  ?", @lyric.id, @lyric.artist)
   end
 
   private
