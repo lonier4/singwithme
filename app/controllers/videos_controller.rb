@@ -20,6 +20,7 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    @videos_from_same_artist = Video.where("id != ? AND artist =  ?", @video.id, @video.artist)
   end
 
   private

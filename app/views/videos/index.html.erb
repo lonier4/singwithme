@@ -5,11 +5,14 @@
   <hr />
 
   
-    
-      <h2 class="text-center"><%= @videos.title.last %></h2>
+      <% if @videos_from_same_artist != nil %>
+      <% @videos_from_same_artist.each do |video| %>
+      <h2 class="text-center"><%= video.title %></h2>
         <div class="col-sm-8 col-12">
-          <%= @videos.artist.last %>
+          <%= video.artist %>
         </div>
+        <% end %>
+        <% end %>
       
     
   </div>
