@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 2020_01_25_180147) do
   create_table "lyrics", force: :cascade do |t|
     t.string "title"
     t.string "artist"
+    t.text "video_url"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "video_url"
     t.index ["user_id"], name: "index_lyrics_on_user_id"
   end
 
