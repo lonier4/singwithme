@@ -1,0 +1,9 @@
+<br />
+
+<div class="booyah-box col-10 offset-1">
+  <h1 class="text-center">Checkout Some Performances</h1>
+  <hr />
+  <% @videos.each do |video| %>
+    <h2 class="text-center"><%= video.title %></h2>
+  <% end %>
+</div>
