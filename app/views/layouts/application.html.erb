@@ -20,9 +20,8 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-md-0">
             <li class="nav-item active">
-              <%= link_to '#', class: 'nav-link' do %>
-              <i class="fa fa-microphone"></i>
-              Lyrics
+              <%= link_to owner_lyrics_path, class: 'nav-link' do %>
+                <i class="fa fa-microphone"></i>Lyrics
               <% end %>
             </li>
 
@@ -66,7 +65,9 @@
       <%= yield %>
     </div>
 
+
     <div id="footer">
+
       <div class="container">
         <b>Owner</b>
         <br />

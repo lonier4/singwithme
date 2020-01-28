@@ -1,0 +1,30 @@
+<br />
+<div class="container">
+  <div class="row text-center">
+    <% @lyrics.each do |lyric| %>
+      <div class="col-sm">
+        <iframe
+          width="340"
+          height="180"
+          src="<%= lyric.video_url %>"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        
+        <div class="col-sm text-center">
+          <%= link_to lyric.title, owner_lyric_path(lyric) %> -
+          <%= link_to lyric.artist, owner_lyric_path(lyric) %>
+        
+        <% if current_user && current_user == lyric.user %>
+          <br />
+          <br />
+            <%= link_to 'Edit', owner_lyric_path(lyric), class: 'btn btn-danger btn-large' %>
+          
+        </div>
+        <% end %>
+      <% end %>
+    
+  </div>
+  </div>
+</div> 

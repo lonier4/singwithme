@@ -1,10 +1,7 @@
 <br />
 <div class="booyah-box col-10 offset-1">
-  <h1 class="text-center"><%= @video.title %></h1>
-  <h2><%= @video.artist %></h2>
-  <% if current_user && current_user == @lyric.user %>
-    <br />
-    <br />
-    <%= link_to 'Administer', owner_lyric_path(@course), class: 'btn btn-danger btn-large' %>
-  <% end %>
+  <div class="text-center">
+  <b><%= @video.title %> -
+    <%= @video.artist %></b>
+  </div>
 </div>

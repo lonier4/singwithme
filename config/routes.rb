@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root 'landing_pages#index'
   resources :videos
   namespace :owner do
-    resources :lyrics, only: [:new, :create, :show]
+    resources :lyrics, only: [:new, :create, :show, :index]
   end 
 end

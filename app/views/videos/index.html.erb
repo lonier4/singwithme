@@ -4,12 +4,17 @@
   <h1 class="text-center">Checkout Some Performances</h1>
   <hr />
 
-  <% if @videos_from_same_artist != nil %>
-    <% @videos_from_same_artist.each do |video| %>
-      <h2 class="text-center"><%= video.title %></h2>
-      <div class="col-sm-8 col-12">
-        <%= video.artist %>
-      </div>
-    <% end %>
+  <div class="row">
+    <% @videos.each do |video| %>
+    <div class="text-center">
+      <%= link_to video.title, video_path(video) %>
+    <br /> -
+      <%= link_to video.artist, video_path(video) %>
+    
+    </div>
+    <br clear="clr" />
   <% end %>
 </div>
+</div>
+
+  

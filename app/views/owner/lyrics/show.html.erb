@@ -1,35 +1,19 @@
 <br />
-<div class="container">
-  <div class="row text-center">
-    <% for video in @videos %>
-      <div class="col-sm">
-        <iframe
-          width="340"
-          height="180"
-          src="<%= @lyric.video_url %>"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div> 
+<div class="booyah-box col-10 offset-1">
+  <div class="col-sm text-center">
+    <iframe
+      width="340"
+      height="180"
+      src="<%= @lyric.video_url %>"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+    <h1 class="text-center">
+      <%= @lyric.title %> -
+    </h1>
+    <h2>
+      <%= @lyric.artist %>
+    </h2>
   </div>
-
-
-  <h3>other videos by <%= @lyric.artist%></h3>
-  <div class="row text-center">
-    <% if @lyrics_from_same_artist != nil %>
-      <% @lyrics_from_same_artist.each do |lyric|%>
-        <div class="col-sm">
-          <iframe
-            width="340"
-            height="180"
-            src="<%= lyric.video_url %>"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div> 
-      <% end %>
-    <% end %>
-  </div>
-</div> 
+</div>
