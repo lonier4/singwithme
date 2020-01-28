@@ -27,7 +27,7 @@
             </li>
 
             <li class="nav-item">
-              <%= link_to 'Inspiration', '#', class: 'nav-link' %>
+              <%= link_to 'Inspiration', videos_path, class: 'nav-link' %>
             </li>
 
             <li class="nav-item">
@@ -65,12 +65,17 @@
 
       <%= yield %>
     </div>
+
     <div id="footer">
-        <div class="container">
-          <b>Owner</b>
-          <br />
-          <%= link_to 'Upload A Video', new_owner_lyric_path %>
-        </div>
+      <div class="container">
+        <b>Owner</b>
+        <br />
+        <%= link_to 'Upload A Video', new_owner_lyric_path %>
+        <br />
+        <b>Singers</b>
+        <br />
+        <%= link_to 'Show Off Your Skills!', new_video_path %>
       </div>
-    </body>
-  </html>
+    </div>
+  </body>
+</html>

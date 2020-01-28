@@ -1,6 +1,10 @@
 class Owner::LyricsController < ApplicationController
   before_action :authenticate_user!
   
+  def index
+    @lyrics = Lyric.all
+  end
+
   def new
     @lyric = Lyric.new
   end
