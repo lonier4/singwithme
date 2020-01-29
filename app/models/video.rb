@@ -1,5 +1,6 @@
 class Video < ApplicationRecord
-  mount_uploader :image, PictureUploader
+  mount_uploader :image, ImageUploader
+  mount_uploader :video, VideoUploader
   
   belongs_to :user
 
