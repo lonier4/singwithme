@@ -1,13 +1,16 @@
 class VideosController < ApplicationController
   before_action :authenticate_user!
+  
 
   def index
     @videos = Video.all
+    @videos = Video.order("title").page(params[:page]).per_page(6)
   end
 
   def new
     @video = Video.new
   end
+
 
   def create
     @video = current_user.videos.create(video_params)
@@ -19,11 +22,15 @@ class VideosController < ApplicationController
   end
 
   def show
-    @video = Video.find(params[:id])
-    @videos_from_same_artist = Video.where("id != ? AND artist =  ?", @video.id, @video.artist)
+   
   end
 
   private
+
+  helper_method :current_user_video
+  def current_user_video
+    @current_user_video ||= Video.find(params[:id])
+  end
 
   def video_params
     params.require(:video).permit(:title, :artist, :image, :video)

@@ -3,6 +3,7 @@ class Owner::LyricsController < ApplicationController
   
   def index
     @lyrics = Lyric.all
+    @lyrics = Lyric.order("title").page(params[:page]).per_page(6)
   end
 
   def new
@@ -18,7 +19,22 @@ class Owner::LyricsController < ApplicationController
 
   def show
     @lyric = Lyric.find(params[:id])
-    @lyrics_from_same_artist = Lyric.where("id != ? AND artist =  ?", @lyric.id, @lyric.artist)
+  end
+
+  def edit
+    @lyric = Lyric.find(params[:id])
+  end
+
+  def update
+    @lyric = Lyric.find(params[:id])
+    @lyric.update_attributes(lyric_params)
+    redirect_to owner_lyric_path
+  end
+
+  def destroy
+    @lyric = Lyric.find(params[:id])
+    @lyric.destroy
+    redirect_to root_path
   end
 
   private

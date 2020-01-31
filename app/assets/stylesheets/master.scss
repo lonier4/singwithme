@@ -10,7 +10,9 @@
 
 .navbar-inverse a.navbar-brand {
   font-weight: 400;
-  color: black;
+  font-family: 'Righteous', cursive;
+
+  color: red;
 }
 
 .hero {
@@ -49,17 +51,19 @@
 }
 
 .booyah-box {
-  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  box-shadow: 1px 1px 2px 0 #d0d0d0;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  -moz-box-shadow: 1px 1px 2px 0 #b72b2b;
+  -webkit-box-shadow: 1px 1px 2px 0 #b72b2b;
+  box-shadow: 1px 1px 2px 0 #b72b2b;
+  background: #181a1b;
   padding: 10px;
 }
 
 .booyah-box h2, .booyah-box h1 {
   margin: 10px;
+}
+
+.navbar-inverse .navbar-nav .active > .nav-link {
+  color: red;
 }
 
 .navbar-inverse .navbar-nav .nav-link {
@@ -69,12 +73,13 @@
 .btn-outline-success {
   color: red;
   border-color: red;
+  text-decoration: none;
 }
 
 .btn-primary {
-  background-color: transparent;
-  border-color: navajowhite;
-  color: red;
+  background-color: #373e49;
+  border-color: red;
+  color: navajowhite;
   font-weight: 600;
 }
 
@@ -92,4 +97,76 @@
   border-radius: 3px;
   padding: 2px 8px 2px 8px;
   margin: 10px;
+}
+
+.karaoke {
+  background-color: #373e49;
+}
+
+.karaoke b {
+  color: red;
+}
+
+body {
+  background: image_url('darkness.png');
+}
+
+a {
+  color: #b72b2b;
+}
+
+h1, h2, h3 {
+  color: navajowhite;
+}
+
+.pagination {
+  
+  cursor: default;
+  height: 49px;
+  float: left;
+  max-width: fit-content;
+  a, span, em {
+    padding: 0.2em 0.5em;
+    display: block;
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 1px;
+  }
+  .disabled {
+    display: none;
+  }
+  .current {
+    font-style: normal;
+    font-weight: bold;
+    
+    color: navajowhite;
+    border: 1px solid navajowhite;
+  }
+  a {
+    text-decoration: none;
+    color: red;
+    border: 1px solid navajowhite;
+    &:hover, &:focus {
+      color: red;
+      border-color: red;
+    }
+  }
+  .page_info {
+    background: none;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center;
+    b {
+      color: #000033;
+      background: #2e6ab1 + 60;
+      padding: 0.1em 0.25em;
+    }
+  }
+}
+
+.form-inputs {
+  color: navajowhite;
 }

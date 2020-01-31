@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="http://vjs.zencdn.net/5.12.6/video-js.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous|Rye&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -38,6 +39,9 @@
           <ul class="navbar-nav">
             <% if user_signed_in? %>
               <li class="nav-item">
+                <%= link_to 'My Profile', user_path(current_user), class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
                 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
               </li>
               <% else %>
@@ -50,8 +54,8 @@
             <% end %>
 
             <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control form-control-sm" type="text" placeholder="Search">
+            <button i class="fa fa-search" type="submit"></i></button>
           </form>
         </div>
       </nav>
@@ -70,17 +74,35 @@
     <div id="footer">
 
       <div class="container">
-        <b>Owner</b>
-        <br />
-        <%= link_to 'Upload A Video', new_owner_lyric_path %>
-        <br />
-        <b>Singers</b>
-        <br />
-        <%= link_to 'Show Off Your Skills!', new_video_path %>
+        <div class="row">
+          <div class="col-12 col-sm-6">
+            <b>Owner</b>
+            <br />
+            <%= link_to 'Upload A Video', new_owner_lyric_path %>
+            
+            <br />
+            <b>Singers</b>
+            <br />
+
+            <%= link_to 'Show Off Your Skills', new_video_path %>
+          </div>
+
+          <div class="col-12 col-sm-6 social">
+            <b>Social</b>
+            <br />
+            <br />
+            <%= link_to 'https://twitter.com/CantaloupesD' do %>
+            <span class="fa fa-twitter-square fa-2x social-button"></span>
+            <% end %>
+            <%= link_to 'https://github.com/lonier4/singwithme' do %>
+            <span class="fa fa-github-square fa-2x social-button"></span>
+          <% end %>
+        </div>
       </div>
     </div>
+  </div>
 
-    <script src="http://vjs.zencdn.net/5.12.6/video.js"></script>
-    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-  </body>
-</html>
+        <script src="http://vjs.zencdn.net/5.12.6/video.js"></script>
+        <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+      </body>
+    </html>

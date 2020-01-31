@@ -15,5 +15,14 @@
     <h2>
       <%= @lyric.artist %>
     </h2>
+<div class="float-right">
+    <% if current_user && current_user == @lyric.user %>
+      
+      <%= link_to 'Edit', edit_owner_lyric_path(@lyric), class: 'btn btn-primary btn-sm' %>
+      <%= link_to 'Destroy', owner_lyric_path(@lyric), method: :delete, data: {confirm: 'Ready to part ways with this video?'}, class: 'btn btn-primary btn-sm' %>
+      <% end %>
+
+    </div>
   </div>
+
 </div>

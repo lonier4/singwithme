@@ -6,4 +6,5 @@ class Video < ApplicationRecord
 
   validates :title, presence: true
   validates :artist, presence: true
+  validates :video, presence: true
 end

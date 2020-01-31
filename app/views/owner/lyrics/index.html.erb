@@ -16,15 +16,14 @@
           <%= link_to lyric.title, owner_lyric_path(lyric) %> -
           <%= link_to lyric.artist, owner_lyric_path(lyric) %>
         
-        <% if current_user && current_user == lyric.user %>
-          <br />
-          <br />
-            <%= link_to 'Edit', owner_lyric_path(lyric), class: 'btn btn-danger btn-large' %>
           
-        </div>
-        <% end %>
+            </div>
+          </div>
+        
       <% end %>
-    
-  </div>
+    </div>
   </div>
 </div> 
+
+<%= will_paginate @lyrics, previous_label: h("<<"), next_label: h(">>") %>
+
