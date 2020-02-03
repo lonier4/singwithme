@@ -52,55 +52,49 @@
                 <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
               </li>
             <% end %>
-
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control form-control-sm" type="text" placeholder="Search">
-            <button i class="fa fa-search" type="submit"></i></button>
-          </form>
-        </div>
-      </nav>
-
-      <% if notice.present? %>
-        <p class="alert alert-info"><%= notice %></p>
-      <% end %>
-      <% if alert.present? %>
-        <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
-
-      <%= yield %>
-    </div>
-
-
-    <div id="footer">
-
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-sm-6">
-            <b>Owner</b>
-            <br />
-            <%= link_to 'Upload A Video', new_owner_lyric_path %>
-            
-            <br />
-            <b>Singers</b>
-            <br />
-
-            <%= link_to 'Show Off Your Skills', new_video_path %>
           </div>
+        </nav>
 
-          <div class="col-12 col-sm-6 social">
-            <b>Social</b>
-            <br />
-            <br />
-            <%= link_to 'https://twitter.com/CantaloupesD' do %>
-            <span class="fa fa-twitter-square fa-2x social-button"></span>
-            <% end %>
-            <%= link_to 'https://github.com/lonier4/singwithme' do %>
-            <span class="fa fa-github-square fa-2x social-button"></span>
-          <% end %>
-        </div>
+        <% if notice.present? %>
+          <p class="alert alert-info"><%= notice %></p>
+        <% end %>
+        <% if alert.present? %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+
+        <%= yield %>
       </div>
-    </div>
-  </div>
+
+
+      <div id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-3">
+              <b>Owner</b>
+              <br />
+              <%= link_to 'Upload A Video', new_owner_lyric_path %>
+              </div>
+              <br />
+              <div class="col-12 col-sm-3 social">
+              <b>Singers</b>
+              <br />
+              <%= link_to 'Show Off Your Skills', new_video_path %>
+              </div>
+              <div class="col-12 col-sm-3 social">
+              123 Karoake Sing Rd. Microphone City, TX 72132
+              <br />
+              </div>
+              <div class="social col-12 col-sm-3 float-right">
+                <%= link_to 'https://twitter.com/CantaloupesD' do %>
+                  <span class="fa fa-twitter-square fa-2x social-button"></span>
+                <% end %>
+                <%= link_to 'https://github.com/lonier4/singwithme' do %>
+                  <span class="fa fa-github-square fa-2x social-button"></span>
+                <% end %>
+              </div>
+            </div>
+          </div>   
+        </div>
 
         <script src="http://vjs.zencdn.net/5.12.6/video.js"></script>
         <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>

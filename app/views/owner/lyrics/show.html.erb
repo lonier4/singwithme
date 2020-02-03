@@ -1,28 +1,21 @@
 <br />
-<div class="booyah-box col-10 offset-1">
+<div class="booyah-box col-8 offset-2">
   <div class="col-sm text-center">
     <iframe
-      width="340"
-      height="180"
+      width="460"
+      height="260"
       src="<%= @lyric.video_url %>"
       frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
-    <h1 class="text-center">
-      <%= @lyric.title %> -
-    </h1>
-    <h2>
+    <h2 class="text-center">
+      <%= @lyric.title %> 
+      -
       <%= @lyric.artist %>
     </h2>
-<div class="float-right">
     <% if current_user && current_user == @lyric.user %>
-      
-      <%= link_to 'Edit', edit_owner_lyric_path(@lyric), class: 'btn btn-primary btn-sm' %>
       <%= link_to 'Destroy', owner_lyric_path(@lyric), method: :delete, data: {confirm: 'Ready to part ways with this video?'}, class: 'btn btn-primary btn-sm' %>
       <% end %>
-
     </div>
   </div>
-
-</div>

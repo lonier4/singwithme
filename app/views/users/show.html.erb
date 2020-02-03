@@ -1,7 +1,7 @@
 <div class="booyah-box">
   <div class="row">
     <div class="col-4">
-      <%= image_tag 'alien.png' %>
+      <%= image_tag 'alien.png', class: "alien" %>
     </div>
 
     <div class="col-8">
@@ -13,4 +13,10 @@
   <div class="clr"></div>
 
   <h2 class="text-center">My Lyrics</h2>
+<% @user.lyrics.each do |lyric| %>
+  <div class="booyah-box col-10 offset-1">
+    <h1><%= link_to lyric.title, owner_lyric_path(@lyric) %></h1><br />
+    <i><%= lyric.artist %></i><br />
+    <% end %>
+</div>
 
