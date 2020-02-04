@@ -1,37 +1,36 @@
 <br />
-
-
-
-<div class="booyah-box col-10 offset-1">
-  <h1 class="text-center">Checkout Some Performances</h1>
-  <hr />
-
-  <div class="container">
-    <div class=" row text-center">
-      <% @videos.each do |video| %>
-        <div class="col-sm">
-          <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="340" height="180"
-           poster="<%= image_path('black.jpg') %>" data-setup="{}">
-          <source src="<%= video.video.to_s %>" type='video/mp4'>
-          <source src="<%= video.video.to_s %>" type='video/webm'>
-          <noscript>
-            <p class="vjs-no-js">
-              To view this video please enable JavaScript, and consider upgrading to a web browser that
-            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-            </p>
-          </noscript>
-        </video>
-        <br />
-        <div class="col-sm text-center">
-          <%= link_to video.title, video_path(video) %>
-        <br /> -
-          <%= link_to video.artist, video_path(video) %>
+  <div class="booyah-box col-10 offset-1">
+    <h1 class="text-center">Checkout Some Performances</h1>
+    <hr />
+    <h6 class="text-center">Sometimes we just have to watch other humans sing first so we can warm up. Psst..Tequila always helps too!</h6>
+    </br>
+    
+    <div class="container">
+      <div class=" row text-center">
+        <% @videos.each do |video| %>
+          <div class="col-sm">
+            <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="340" height="180"
+             poster="<%= image_path('black.jpg') %>" data-setup="{}">
+            <source src="<%= video.video.to_s %>" type='video/mp4'>
+            <source src="<%= video.video.to_s %>" type='video/webm'>
+            <noscript>
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+              <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+              </p>
+            </noscript>
+          </video>
+          </br>
+          <div class="col-sm text-center">
+            <%= link_to video.title, video_path(video) %>
+            -
+            <%= link_to video.artist, video_path(video) %>
+          </div>
         </div>
-      </div>
-    <% end %>
-    <br clear="clr" />
+      <% end %>
+      <br clear="clr" />
+    </div>
   </div>
-</div>
 </div>
 
 <%= will_paginate @videos, previous_label: h("<<"), next_label: h(">>") %>

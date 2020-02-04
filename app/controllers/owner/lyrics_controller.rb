@@ -25,12 +25,6 @@ class Owner::LyricsController < ApplicationController
     @lyric = Lyric.find(params[:id])
   end
 
-  def update
-    @lyric = Lyric.find(params[:id])
-    @lyric.update_attributes(lyric_params)
-    redirect_to owner_lyric_path
-  end
-
   def destroy
     @lyric = Lyric.find(params[:id])
     @lyric.destroy

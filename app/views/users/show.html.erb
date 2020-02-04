@@ -1,22 +1,73 @@
 <div class="booyah-box">
-  <div class="row">
-    <div class="col-4">
-      <%= image_tag 'alien.png', class: "alien" %>
-    </div>
-
-    <div class="col-8">
+  <div class="row text-center">
+    <div class="col">
       <h1>My Profile</h1>
+    </div>
+  </div>
+  </br>
+
+  <div class="row">
+    <div class="col">
       <h2><%= @user.email %></h2>
-      <h3>Singing Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
+    </div>
+    <div class="col">
+      <h2>Singing Since: <%= @user.created_at.strftime("%B %d, %Y") %></h2>
     </div>
   </div>
   <div class="clr"></div>
+  </br>
 
   <h2 class="text-center">My Lyrics</h2>
-<% @user.lyrics.each do |lyric| %>
-  <div class="booyah-box col-10 offset-1">
-    <h1><%= link_to lyric.title, owner_lyric_path(@lyric) %></h1><br />
-    <i><%= lyric.artist %></i><br />
-    <% end %>
-</div>
+    <div class="container">
+      <div class="row text-center">
+        <% @user.lyrics.each do |lyric| %>
+          <div class="col-sm">
+            <iframe
+              width="340"
+              height="180"
+              src="<%= lyric.video_url %>"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+            
+            <div class="col-sm text-center">
+              <%= link_to lyric.title, owner_lyric_path(lyric) %> -
+              <%= link_to lyric.artist, owner_lyric_path(lyric) %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
+    </br>
+
+    <h2 class="text-center">My Stellar Performances</h2>
+      <div class="container">
+        <div class=" row text-center">
+          <% @user.videos.each do |video| %>
+            <div class="col-sm">
+              <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="340" height="180"
+               poster="<%= image_path('black.jpg') %>" data-setup="{}">
+              <source src="<%= video.video.to_s %>" type='video/mp4'>
+              <source src="<%= video.video.to_s %>" type='video/webm'>
+              <noscript>
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+              </noscript>
+            </video>
+            
+            <div class="col-sm text-center">
+              <%= link_to video.title, video_path(video) %>
+              -
+              <%= link_to video.artist, video_path(video) %>
+            </div>
+          </div>
+        <% end %>
+        <br clear="clr" />
+      </div>
+    </div>
+  </div> 
+    
